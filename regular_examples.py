@@ -1,3 +1,4 @@
+""" 
 import re
 import pyperclip
 
@@ -24,4 +25,4 @@ for elements in find:
 cadena = '\n'.join(lista_correos)
 print(cadena)
 print(f'regular expression encontro {cuenta_correos} correos')
-print(f'en la pagina web se encontraron {correos_pagina_web} posibles')
+print(f'en la pagina web se encontraron {correos_pagina_web} posibles') """
