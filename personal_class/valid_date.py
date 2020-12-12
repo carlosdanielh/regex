@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 
 class Valid_Date():
@@ -7,10 +7,13 @@ class Valid_Date():
         self.month = month
         self.year = year
 
-    def is_valid_date(self, day, month, year):
+    def is_valid_date(self):
         try:
-
-            datetime.datetime(year, month, day)
+            datetime(self.year, self.month, self.day)
             return True
         except ValueError:
             return False
+
+    def formatted_latin_date(self):
+        x = datetime(self.year, self.month, self.day)
+        return x.strftime('%d/%m/%y')
