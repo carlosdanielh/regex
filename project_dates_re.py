@@ -78,10 +78,13 @@ def main():
     date_list = date_string.split('/')
     print(date_list)
 
-    day = date_list[0]
-    month = date_list[1]
-    year = date_list[2]
+    # day = date_list[0]
+    # month = date_list[1]
+    # year = date_list[2]
 
+    day = '20'
+    month = '02'
+    year = '2020'
     
     print(day)
     date = Valid_Date(int(day), int(month), int(year))
