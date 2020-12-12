@@ -46,43 +46,51 @@ def clear():
     os.system('cls')
 
 
-clear()
-texto = '''
-1/01/2020
-02/11/2020
-03_10_1984
-20.12.1984
-1/2.2020
-04-8-1976
-no:
-2020/02/01
-1842/2/42
-2020-01-01
-'''
+def main():
+    clear()
+    texto = '''
+    1/01/2020
+    02/11/2020
+    03_10_1984
+    20.12.1984
+    1/2.2020
+    04-8-1976
+    no:
+    2020/02/01
+    1842/2/42
+    2020-01-01
+    '''
 
-pattern = re.compile(r'\b[0-9]{1,2}[/_.-]+[0-9]{1,2}[/_.-]+\d{4}')
-find = pattern.findall(texto)
-print(find)
-cadena = ' '.join(find)
-print(cadena)
+    pattern = re.compile(r'\b[0-9]{1,2}[/_.-]+[0-9]{1,2}[/_.-]+\d{4}')
+    find = pattern.findall(texto)
+    print(find)
+    cadena = ' '.join(find)
+    print(cadena)
 
-pattern = re.compile(r'[_./-]')
-subtituion = pattern.sub('/', cadena)
-print(subtituion)
+    pattern = re.compile(r'[_./-]')
+    subtituion = pattern.sub('/', cadena)
+    print(subtituion)
 
-date_list = subtituion.split(' ')
-print(date_list)
-print(len(date_list))
-date_string = date_list[0]
-date_list = date_string.split('/')
-print(date_list)
+    date_list = subtituion.split(' ')
+    print(date_list)
+    print(len(date_list))
+    date_string = date_list[0]
+    date_list = date_string.split('/')
+    print(date_list)
+
+    day = date_list[0]
+    month = date_list[1]
+    year = date_list[2]
+
+    
+    print(day)
+    date = Valid_Date(int(day), int(month), int(year))
+    # if date.is_valid_date():
+    #     date_formatted = date.formatted_latin_date()
+    print(date.is_valid_date())
+    # print(date_formatted)
+    # for element in find:
+    #     print(element.replace('.', '/'))
 
 
-date = Valid_Date(int(date_list[0]), int(date_list[1]), int(date_list[2]))
-valid_date = date.is_valid_date(date.day, date.month, date.year)
-print(valid_date)
-
-
-
-# for element in find:
-#     print(element.replace('.', '/'))
+main()
