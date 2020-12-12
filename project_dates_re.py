@@ -72,28 +72,20 @@ def main():
     print(subtituion)
 
     date_list = subtituion.split(' ')
-    print(date_list)
-    print(len(date_list))
-    date_string = date_list[0]
-    date_list = date_string.split('/')
-    print(date_list)
-
-    # day = date_list[0]
-    # month = date_list[1]
-    # year = date_list[2]
-
-    day = '20'
-    month = '02'
-    year = '2020'
+    print(date_list) 
     
-    print(day)
-    date = Valid_Date(int(day), int(month), int(year))
-    # if date.is_valid_date():
-    #     date_formatted = date.formatted_latin_date()
-    print(date.is_valid_date())
-    # print(date_formatted)
-    # for element in find:
-    #     print(element.replace('.', '/'))
+    date_formatted_list = []
+    for element in date_list:
+        
+        date = element.split('/')        
+        day = int(date[0])
+        month = int(date[1])
+        year = int(date[2])
+        date = Valid_Date(day, month, year)
+        if date.is_valid_date():
+            date_formatted_list.append(date.formatted_latin_date())
+    print(date_formatted_list)
 
 
 main()
+        
