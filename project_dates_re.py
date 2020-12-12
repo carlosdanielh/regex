@@ -72,11 +72,11 @@ def main():
     print(subtituion)
 
     date_list = subtituion.split(' ')
-    print(date_list) 
-    
+    print(date_list)
+
     date_formatted_list = []
     for element in date_list:
-        
+
         date = element.split('/')        
         day = int(date[0])
         month = int(date[1])
@@ -85,6 +85,9 @@ def main():
         if date.is_valid_date():
             date_formatted_list.append(date.formatted_latin_date())
     print(date_formatted_list)
+
+    print('las fechas encontradas son estas:')
+    print('\n'.join(date_formatted_list))
 
 
 main()
