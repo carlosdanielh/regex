@@ -24,29 +24,25 @@ not
 12,00,567
 15,22,647
 """
-texto = pyperclip.paste()
-# print(type(texto))
-# print(texto)
-pattern = re.compile(r'''(
+# texto = pyperclip.paste()
 
-    #  \d{1,3}(\,\d{3})(\,\d{3})?(\,\d{3})? #capture 9.999, 99.999, 999.999
-                                            # 9.999.999.999
-       \b\d{2}\,\d{3}\,\d{3}              #12,34,567
+# pattern = re.compile(r'''(
 
+#        \b\d{2}\,\d{3}\,\d{3}\b              #12,234,567
     
-    )''', re.VERBOSE)                     
+#     )''', re.VERBOSE)                     
 
+# find = pattern.findall(texto)
+# print(find)
+
+'''
+`!@.#$%.^&*.()_ sdfgsfdghgj
+123.123.123.4345 456.456.456.879
+546.464.654.22 453.111.111.111
+'''
+texto = pyperclip.paste()
+pattern = re.compile(r"\b\d{3}\.\d{3}\.\d{3}\.\d{3}\b") #FUNCIONO
+# pattern = re.compile(r"\b.{3}\..{3}\..{3}\..{3}\b")
+# pattern = re.compile(r".")
 find = pattern.findall(texto)
 print(find)
-# agregarlo = ''
-# index = 0
-# lista_numeros = []
-# for element in find:
-#     print(element)
-#     if len(element[0]) <= 7:
-#         lista_numeros.append(element[0])
-#     index += 1
-
-# print(lista_numeros)
-# agregarlo = '\n'.join(lista_numeros)
-# print(agregarlo)
